@@ -4,6 +4,7 @@ plugins {
 
 android {
     compileSdk 32
+    buildToolsVersion '32.0.0'
 
     defaultConfig {
         applicationId "br.com.promobit.testprotype"
@@ -28,20 +29,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
-//    productFlavors {
-//        regular {}
-//
-//        demo {
-//            applicationIdSuffix = ".demo"
-//        }
-//
-//        winter {
-//            applicationId "br.com.promobit.wintertestprotype"
-//            versionCode 1
-//            versionName "1.0.0"
-//        }
-//    }
+    
 }
 
 dependencies {
