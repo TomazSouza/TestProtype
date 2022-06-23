@@ -23,4 +23,9 @@ public class ExampleInstrumentedTest {
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
         assertEquals("br.com.promobit.testprotype", appContext.getPackageName());
     }
+
+    @Test
+    public void signInUser() {
+
+    }
 }
