@@ -16,10 +16,4 @@ public class ExampleUnitTest {
         assertEquals(4, 2 + 2);
     }
 
-    @Test
-    public void checkAllOperations() {
-//        Calculator calculator = new Calculator(6, 2);
-
-
-    }
 }
