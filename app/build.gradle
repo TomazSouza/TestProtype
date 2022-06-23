@@ -21,25 +21,28 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        debug {
+            minifyEnabled false
+        }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    productFlavors {
-        regular {}
-
-        demo {
-            applicationIdSuffix = ".demo"
-        }
-
-        winter {
-            applicationId "br.com.promobit.wintertestprotype"
-            versionCode 1
-            versionName "1.0.0"
-        }
-    }
+//    productFlavors {
+//        regular {}
+//
+//        demo {
+//            applicationIdSuffix = ".demo"
+//        }
+//
+//        winter {
+//            applicationId "br.com.promobit.wintertestprotype"
+//            versionCode 1
+//            versionName "1.0.0"
+//        }
+//    }
 }
 
 dependencies {
