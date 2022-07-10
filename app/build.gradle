@@ -3,13 +3,13 @@ plugins {
 }
 
 android {
-    compileSdk 32
-    buildToolsVersion '32.0.0'
+    compileSdk 31
+    buildToolsVersion '31.0.0'
 
     defaultConfig {
         applicationId "br.com.promobit.testprotype"
         minSdk 21
-        targetSdk 32
+        targetSdk 31
         versionCode 1
         versionName "1.0"
 
