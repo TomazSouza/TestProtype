@@ -18,7 +18,7 @@ public class ExampleUnitTest {
 
     @Test
     public void addition_IsFailure() {
-        assertEquals(4, 1 + 3);
+        assertEquals(4, 1 + 2);
     }
 
 }
