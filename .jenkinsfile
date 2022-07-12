@@ -9,33 +9,31 @@ pipeline {
        skipStagesAfterUnstable()
    }
    
-   stages {
-       
-       stage('Detect build type') {
-          steps {
-			script {
+stages { 
+    stage('Detect build type') {
+        steps {
+		    script {
 				 if (env.BRANCH_NAME == 'develop' || env.CHANGE_TARGET == 'develop') {
 					env.BUILD_TYPE = 'debug'        
 				} else if (env.BRANCH_NAME == 'master' || env.CHANGE_TARGET == 'master') {
 					env.BUILD_TYPE = 'debug'          
 				}
 			}
-		  }
-       }
+		} 
+    }
+
+    stage('Compile') {
+        sh './gradlew compile${BUILD_TYPE}Sources'
+    }
        
-       stage('Compile') {
-           sh './gradlew compile${BUILD_TYPE}Sources'
-       }
-       
-       stage("Build") {
-           // Compile the app and its dependencies
-           sh './gradlew assemble${BUILD_TYPE}'
+    stage("Build") {
+        // Compile the app and its dependencies
+        sh './gradlew assemble${BUILD_TYPE}'
            
-           sh './gradlew generatePomFileForLibraryPublication'
-       }
+        sh './gradlew generatePomFileForLibraryPublication'
+    }
        
-       stage('Publish') {
-           archiveArtifacts "**/${APP_NAME}-${BUILD_TYPE}.apk"
-       }
-   }
+    stage('Publish') {
+        archiveArtifacts "**/${APP_NAME}-${BUILD_TYPE}.apk"
+    }
 }
